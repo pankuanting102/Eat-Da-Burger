@@ -1,8 +1,7 @@
 var express = require("express");
 
 var router = express.Router();
-var burgers = require("../models/burger.js");
-const burger = require("../../cu-nyc-fsf-pt-07-2020-u-c/13-MVC/02-Homework/Main/BurgerSolution/models/burger.js");
+var burger = require("../models/burger.js");
 
 router.get("/", function(req, res){
     res.redirect("/burgers")
@@ -14,7 +13,16 @@ router.get("/burgers", function (req, res){
     })
 })
 
-router.post()
+router.post("/burgers/create", function (req, res){
+  burger.submit(req.body.burger_name, function(result) {
+    res.redirect("/");
+  });
+})
 
-router.put()
+router.put("/burgers/:id", function(req, res) {
+    burger.update(req.params.id, function(result) {
+      res.sendStatus(200);
+    });
+  });
+  
 module.exports = router;

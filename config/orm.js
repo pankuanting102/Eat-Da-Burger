@@ -1,4 +1,4 @@
-var connection = require("../config/connection.js");
+var connection = require("./connection.js");
 
 function printQuestionMarks(num) {
     var arr = [];
@@ -39,7 +39,40 @@ all: function(tableInput, cb) {
     });
 },
 
+submit: function(table, cols, vals, cb){
+  var queryString = "INSERT INTO " + table;
+  queryString += " (";
+  queryString += cols.toString();
+  queryString += ") ";
+  queryString += "VALUES (";
+  queryString += printQuestionMarks(vals.length);
+  queryString += ") ";
 
+
+  connection.query(queryString, vals, function(err, result) {
+    if (err) {
+      throw err;
+    }
+    cb(result);
+  });
+},
+
+update: function(table, colVal, booleanCheck, cb) {
+  var queryString = "UPDATE " + table;
+
+  queryString += " SET ";
+  queryString += objToSql(colVal);
+  queryString += " WHERE ";
+  queryString += booleanCheck;
+
+  connection.query(queryString, function(err, result) {
+    if (err) {
+      throw err;
+    }
+    cb(result);
+  });
 }
+
+};
 
 module.exports = orm

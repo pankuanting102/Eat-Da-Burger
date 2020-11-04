@@ -21,17 +21,6 @@ body {
     border: 0;
   }
   
-  @media (min-width: 1200px) {
-    .container {
-      width: 990px;
-    }
-  }
-  
-  @media (min-width: 992px) {
-    .container {
-      width: 990px;
-    }
-  }
   
   .enter_section {
     margin-top: 30px;
@@ -64,6 +53,6 @@ body {
   }
   
   h1 {
-    color: #f30;
+    color: #000000;
   }
   
