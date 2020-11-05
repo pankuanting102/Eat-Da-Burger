@@ -1,6 +1,5 @@
 # Eat-Da-Burger
 ###
-
 An web app using orm, sql, express and express-handlebars to get, post and update to display a hamburger wishlist menu.
 
 <br>
@@ -12,5 +11,5 @@ An web app using orm, sql, express and express-handlebars to get, post and updat
 
 <br>
 <br><div style="width: 90vw; margin: auto; border: 1px black solid">
-<img src="">
+<img src="https://github.com/pankuanting102/Eat-Da-Burger/blob/master/public/assets/img/walkthrough.gif?raw=true">
 </div>
